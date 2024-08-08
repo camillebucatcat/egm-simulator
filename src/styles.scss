@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+
+    font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+html, body {
+    background-image: url(./assets/images//bg-main.svg);
+    background-color: #000;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    color: #fff;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    // max-width: 1170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header {
+    background-image: url(./assets/images/header.svg);
+    height: 95px;
+    background-size: cover;
+    font-size: 2.5rem;
+
+    .inner-wrapper {
+        padding: 2rem;
+    }
+    
+}
+
+.content {
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.footer {
+    background-image: url(./assets/images/footer.svg);
+    height: 200px;
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+
+    .container {
+        width: 100%;
+        height: 100%;
+    background-image: url(./assets/images/footer-btn-container.svg);
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    }
+
+    .inner-wrapper {
+        padding: 3.5rem;
+        display: flex;
+    align-items: center;
+    justify-content: space-around;
+    }
+}
+
+button {
+    font-size: 2rem;
+}
+
+.bet-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 250px;
+    font-size: 2.5rem;
+}

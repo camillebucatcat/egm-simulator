@@ -1,0 +1,56 @@
+<div class="wrapper">
+
+	<div class="header">
+		<div class="container">
+			<div class="inner-wrapper">
+			<div>Credits: {{credits}}</div>
+		</div>
+		</div>
+	</div>
+
+
+	<div class="content">
+		<div class="container">
+
+			<div class="machine">
+				<div class="reel reel-1">
+					<div *ngFor="let item of symbols" class="symbol">
+						<img
+							[src]="item.name == 'blank' ? './assets/images/blank.png' : './assets/images/'+ item.name +'-icon.png'" />
+					</div>
+				</div>
+				<div class="reel reel-2">
+					<div *ngFor="let item of symbols2" class="symbol">
+						<img
+							[src]="item.name == 'blank' ? './assets/images/blank.png' : './assets/images/'+ item.name +'-icon.png'" />
+					</div>
+				</div>
+				<div class="reel reel-3">
+					<div *ngFor="let item of symbols3" class="symbol">
+						<img
+							[src]="item.name == 'blank' ? './assets/images/blank.png' : './assets/images/'+ item.name +'-icon.png'" />
+					</div>
+				</div>
+			</div>
+			
+		</div>
+
+	</div>
+
+	<div class="footer">
+		<div class="container">
+			<div class="inner-wrapper">
+
+			<div class="bet-container">
+				<button type="button" [disabled]="minusDisabled" (click)="minus()">-</button>
+			<div>Bet: {{bet}}</div>
+			<button type="button" [disabled]="plusDisabled" (click)="plus()">+</button>
+			</div>
+
+
+			<button type="button" [disabled]="buttonDisabled" (click)="roll()">spin</button>
+		</div>
+
+		</div>
+	</div>
+</div>
