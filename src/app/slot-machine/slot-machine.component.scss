@@ -1,17 +1,22 @@
+$reel: 500px;
 .machine {
 	display: flex;
 	align-items: center;
 	overflow: hidden;
 	color: #fff;
 
-	.reel {
-		width: 300px;
-		height: 550px;
-		// width: 200px;
-		// height: 450px;
-		background-color: #000;
-		position: relative;
+	> div {
 		border: 10px solid #f89d02;
+		padding: 14px 20px;
+		border-radius: 20px;
+		margin: 10px;
+	}
+
+	.reel {
+		width: 280px;
+		height: $reel;
+		background-color: rgba(0,0,0,0.1);
+		position: relative;
 		border-radius: 20px;
 		overflow: hidden;
 
@@ -30,18 +35,17 @@
 		.symbol {
 			width: 100%;
 			height: auto;
-			// height: 150px;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			position: relative;
 			z-index: 100;
+			transform: translateY(calc(-60% + 20px));
+
 
 			img {
-				// width: 90%;
-				// height: 130px;
-				width: auto;
-				height: calc(530px /3);
+				width: 90%;
+				height: auto;
 			}
 		}
 
@@ -69,14 +73,17 @@
 
 @keyframes spin {
 	0% {
-		transform: translateY(-100%);
+		// transform: translateY(-100%);
+		transform: translateY(-50%);
 	}
 
 	95% {
+		// transform: translateY(10%);
 		transform: translateY(10%);
 	}
 
 	100% {
+		// transform: translateY(20%);
 		transform: translateY(20%);
 	}
 }

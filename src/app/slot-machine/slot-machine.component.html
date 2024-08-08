@@ -1,56 +1,98 @@
 <div class="wrapper">
 
-	<div class="header">
-		<div class="container">
-			<div class="inner-wrapper">
-			<div>Credits: {{credits}}</div>
-		</div>
-		</div>
-	</div>
+  <div class="header">
+    <div class="container">
+      <div class="inner-wrapper">
+        <img src="./assets/images/jackpot-logo.png" width="300">
+        <div class="credits-wrapper">
+          <!-- <img src="./assets/images/coin.svg" width="60"> -->
+          <div class="bg-credits">
+            <div>
+              <span style="color: #FDF5A7;">Credits</span>
+              <span class="credits">{{credits}}</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn">
+          <div>
+            <img src="./assets/images/plus-icon.png">
+            Add Funds
+          </div>
+        </button>
+        <button class="btn">
+          <div>
+            Withdraw
+          </div>
+        </button>
+        <button class="btn-sound">
+
+        </button>
+      </div>
+    </div>
+  </div>
 
 
-	<div class="content">
-		<div class="container">
+  <div class="content">
+    <div class="container">
 
-			<div class="machine">
-				<div class="reel reel-1">
-					<div *ngFor="let item of symbols" class="symbol">
-						<img
-							[src]="item.name == 'blank' ? './assets/images/blank.png' : './assets/images/'+ item.name +'-icon.png'" />
-					</div>
-				</div>
-				<div class="reel reel-2">
-					<div *ngFor="let item of symbols2" class="symbol">
-						<img
-							[src]="item.name == 'blank' ? './assets/images/blank.png' : './assets/images/'+ item.name +'-icon.png'" />
-					</div>
-				</div>
-				<div class="reel reel-3">
-					<div *ngFor="let item of symbols3" class="symbol">
-						<img
-							[src]="item.name == 'blank' ? './assets/images/blank.png' : './assets/images/'+ item.name +'-icon.png'" />
-					</div>
-				</div>
-			</div>
-			
-		</div>
+      <div class="machine">
+        <div>
+          <div class="reel reel-1">
+            <div *ngFor="let item of symbols" class="symbol">
+              <img
+                [src]="item.name == 'blank' ? './assets/images/blank.png' : './assets/images/'+ item.name +'-icon.png'"
+                class={{item.name}} />
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="reel reel-1">
+            <div *ngFor="let item of symbols2" class="symbol">
+              <img
+                [src]="item.name == 'blank' ? './assets/images/blank.png' : './assets/images/'+ item.name +'-icon.png'"
+                class={{item.name}} />
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="reel reel-1">
+            <div *ngFor="let item of symbols3" class="symbol">
+              <img
+                [src]="item.name == 'blank' ? './assets/images/blank.png' : './assets/images/'+ item.name +'-icon.png'"
+                class={{item.name}} />
+            </div>
+          </div>
+        </div>
+      </div>
 
-	</div>
+    </div>
 
-	<div class="footer">
-		<div class="container">
-			<div class="inner-wrapper">
+  </div>
 
-			<div class="bet-container">
-				<button type="button" [disabled]="minusDisabled" (click)="minus()">-</button>
-			<div>Bet: {{bet}}</div>
-			<button type="button" [disabled]="plusDisabled" (click)="plus()">+</button>
-			</div>
+  <div class="footer">
+    <div class="container">
+      <div class="inner-wrapper">
 
+        <div class="bet-container">
+          <button class="btn-minus" type="button" [disabled]="minusDisabled" (click)="minus()"></button>
+          <div class="bet-bg">
+            Bet: 
 
-			<button type="button" [disabled]="buttonDisabled" (click)="roll()">spin</button>
-		</div>
+            <div>
 
-		</div>
-	</div>
+            {{bet}}
+          </div>
+
+          </div>
+          <button class="btn-plus" type="button" [disabled]="plusDisabled" (click)="plus()"></button>
+        </div>
+        <div class="win-bg">
+          {{win}}
+        </div>
+        <button class="btn-spin" type="button" [disabled]="buttonDisabled" (click)="roll()">spin</button>
+      </div>
+
+    </div>
+  </div>
 </div>
